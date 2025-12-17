@@ -25,7 +25,7 @@ Implements the backend assignment requirements: JWT auth with roles (Admin/Custo
 
 ### 1) Install dependencies
 ```bash
-npm install
+npm install / npm i
 ```
 
 ### 2) Configure environment variables
