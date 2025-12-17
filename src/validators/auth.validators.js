@@ -1,0 +1,16 @@
+const { body } = require("express-validator");
+
+const registerValidator = [
+  body("name").isString().trim().isLength({ min: 2, max: 80 }),
+  body("email").isEmail().normalizeEmail(),
+  body("password").isString().isLength({ min: 6, max: 200 }),
+  body("role").optional().isIn(["admin", "customer"]),
+  body("adminSecret").optional().isString(),
+];
+
+const loginValidator = [
+  body("email").isEmail().normalizeEmail(),
+  body("password").isString().isLength({ min: 1 }),
+];
+
+module.exports = { registerValidator, loginValidator };
